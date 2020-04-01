@@ -1,0 +1,11 @@
+<odoo>
+    <data>
+        <report id="hms_patient_report"
+                string="Patients Report"
+                name="hms.hms_patient_template"
+                model="hms.patient"
+                report_type="qweb-pdf"
+                print_report_name="'Patient.pdf'"
+        />
+    </data>
+</odoo>

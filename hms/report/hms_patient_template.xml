@@ -1,0 +1,34 @@
+<odoo>
+    <template id="hms_patient_template">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t t-call="web.external_layout">
+                    <div class="container" style="border: 2px solid blue;margin: 5px auto;">
+                        <h2>Patient Status Report</h2>
+                        <div class="row">
+                            <div class="col-7">
+                                <h3> Personal Information </h3>
+                                <br/>
+                                <p>Name : <span t-field="o.first_name"/></p>
+                                <p>Age : <span t-field="o.age"/></p>
+                                <img src='/hms/report/1.jpg' style="max-height: 45px;"/>
+                                <p>Department : <span t-field="o.department_id.department_name"/></p>
+                                <p>
+                                    <t t-foreach="o.doctor_id" t-as="doctor">
+                                        <span t-field="doctor.first_name"/>,
+                                    </t>
+                                </p>
+                            </div>
+                            <div class="row-6">
+                                <h3> Medical Information </h3>
+                                <p>Birth Date : <span t-field="o.birth_date"/></p>
+                                <p>Birth Date : <span t-field="o.cr_ratio"/></p>
+                                <p>Birth Date : <span t-field="o.blood_type"/></p>
+                            </div>
+                        </div>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+</odoo>
